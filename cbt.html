@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CBT</title>
+    <script>
+        mark = 0;
+        var qq;
+        function marks(){
+            document.getElementById("mark").innerHTML = "";
+        }
+        function questionans(q){
+            qq = q;
+            var x = document.forms["question"][q].value;
+            // document.forms["question"][q][0].setAttribute("disabled","disabled");
+            // document.forms["question"][q][1].setAttribute("disabled","disabled");
+            // document.forms["question"][q][2].setAttribute("disabled","disabled");
+            // document.forms["question"][q][3].setAttribute("disabled","disabled");
+            if (x == "ans") {
+                ++mark;
+            }
+        }
+
+        function sub(){
+            document.getElementById("submit").setAttribute("disabled","disabled");
+            document.getElementById("mark").style.visibility = "visible";
+            document.getElementById("mark").innerHTML = "Your scored " + mark + "/10";
+        }
+
+        function retake() {
+            mark = 0;
+            document.forms["question"].reset();
+            // document.forms["question"]["q1"][0].removeAttribute("disabled");
+            document.getElementById("mark").style.visibility = "hidden";
+            document.getElementById("submit").removeAttribute("disabled");
+        }
+
+    </script>
+</head>
+<body>
+    <form name="question" id="question">
+
+    <h3> 1. Who is the President of America?</h3>
+
+    <input type="radio"  name="q1" value="ans" onchange="questionans('q1','ans1')">A. Donald Trump<br>
+    <input type="radio" name="q1" value="b" onchange="questionans('q1')">B. Obasanjo<br>
+    <input type="radio" name="q1" value="c" onchange="questionans('q1')">C. George Bush<br>
+    <input type="radio" name="q1" value="d" onchange="questionans('q1')">D. Vladimir Putin<br>
+        <div id="ans1"></div>
+
+    <h3> 2. Who is the President of Nigeria?</h3>
+    <input type="radio" name="q2" value="a" onchange="questionans('q2')">A. Aisha Buhari<br>
+    <input type="radio" name="q2" value="b" onchange="questionans('q2')">B. Obasanjo<br>
+    <input type="radio" name="q2" value="ans" onchange="questionans('q2')">C. President Buhari<br>
+    <input type="radio" name="q2" value="d" onchange="questionans('q2')">D. Vladimir Putin<br>
+
+        <h3> 3. What is the first letter of the alphabet?</h3>
+        <input type="radio" name="q3" value="a" onchange="questionans('q3')">A. D<br>
+        <input type="radio" name="q3" value="b" onchange="questionans('q3')">B. C<br>
+        <input type="radio" name="q3" value="ans" onchange="questionans('q3')">C. A<br>
+        <input type="radio" name="q3" value="d" onchange="questionans('q3')">D. B<br>
+
+        <h3> 4. What is the fourth letter of the alphabet?</h3>
+        <input type="radio" name="q4" value="ans" onchange="questionans('q4')">A. D<br>
+        <input type="radio" name="q4" value="b" onchange="questionans('q4')">B. C<br>
+        <input type="radio" name="q4" value="c" onchange="questionans('q4')">C. A<br>
+        <input type="radio" name="q4" value="d" onchange="questionans('q4')">D. B<br>
+
+        <h3> 5. What is the third letter of the alphabet?</h3>
+        <input type="radio" name="q5" value="a" onchange="questionans('q5')">A. D<br>
+        <input type="radio" name="q5" value="ans" onchange="questionans('q5')">B. C<br>
+        <input type="radio" name="q5" value="c" onchange="questionans('q5')">C. A<br>
+        <input type="radio" name="q5" value="d"  onchange="questionans('q5')">D. B<br>
+
+        <h3> 6. What is the second letter of the alphabet?</h3>
+        <input type="radio" name="q6" value="a" onchange="questionans('q6')">A. D<br>
+        <input type="radio" name="q6" value="b" onchange="questionans('q6')">B. C<br>
+        <input type="radio" name="q6" value="c" onchange="questionans('q6')">C. A<br>
+        <input type="radio" name="q6" value="ans" onchange="questionans('q6')">D. B<br>
+
+        <h3> 7. What is the first letter in BADASS?</h3>
+        <input type="radio" name="q7" value="a" onchange="questionans('q7')">A. D<br>
+        <input type="radio" name="q7" value="ans" onchange="questionans('q7')">B. C<br>
+        <input type="radio" name="q7" value="c" onchange="questionans('q7')">C. A<br>
+        <input type="radio" name="q7" value="d" onchange="questionans('q7')">D. B<br>
+
+        <h3> 8. What is the first letter in CARD?</h3>
+        <input type="radio" name="q8" value="a" onchange="questionans('q8')">A. D<br>
+        <input type="radio" name="q8" value="b" onchange="questionans('q8')">B. C<br>
+        <input type="radio" name="q8" value="ans" onchange="questionans('q8')">C. A<br>
+        <input type="radio" name="q8" value="d" onchange="questionans('q8')">D. B<br>
+
+        <h3> 9. What is the first letter in ARCH?</h3>
+        <input type="radio" name="q9" value="a" onchange="questionans('q9')">A. D<br>
+        <input type="radio" name="q9" value="b" onchange="questionans('q9')">B. C<br>
+        <input type="radio" name="q9" value="ans" onchange="questionans('q9')">C. A<br>
+        <input type="radio" name="q9" value="d" onchange="questionans('q9')">D. B<br>
+
+
+        <h3> 10. What is the first letter in DAB?</h3>
+        <input type="radio" name="q10" value="ans" onchange="questionans('q10')">A. D<br>
+        <input type="radio" name="q10" value="b" onchange="questionans('q10')">B. C<br>
+        <input type="radio" name="q10" value="c" onchange="questionans('q10')">C. A<br>
+        <input type="radio" name="q10" value="d" onchange="questionans('q10')">D. B<br>
+
+</form>
+    <input type="button" id="submit" value="Submit"  onclick="sub()">
+    <input type="button" value="Retake Test"  onclick="retake()">
+<div id="mark"></div>
+</body>
+</html>
